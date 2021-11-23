@@ -1,8 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title> Employee App </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -12,9 +10,20 @@
       <ion-title size="large">Blank</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <ion-button (click)="showUser()" expand="block" shape="round">
+    Call GET API
+  </ion-button>
+  <ion-button (click)="createUser()" expand="block" shape="round">
+    Call POST API
+  </ion-button>
+  <div *ngFor="let item of userData">
+    <div class="container">
+      <p>Name</p>
+      <p>{{ item.first_name }}</p>
+    </div>
+    <div class="container">
+      <p>Email</p>
+      <p>{{ item.email }}</p>
+    </div>
   </div>
 </ion-content>
